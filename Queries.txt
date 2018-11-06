@@ -1,0 +1,4 @@
+create table Hotel(hotel_id int(6) primary key, city varchar(20), hotel_name varchar (40), address varchar(25), description varchar(50), avg_rate_per_night NUMBER(6,2), phone_no1 varchar(10), phone_no2 varchar(10), rating varchar(4), email varchar(25), fax varchar(15));
+create table Users(user_id int(6) primary key, password varchar(10), role varchar(10),  user_name varchar (20), mobile_no varchar(10), phone varchar(10), address varchar(25), email varchar(15));
+create table RoomDetails(hotel_id REFERENCES Hotel(hotel_id),  room_id int(4) primary key,  room_no varchar(3), room_type varchar(20), per_night_rate number(6,2), availability varchar(10));
+create table BookingDetails(booking_id id(6) primary key, room_id varchar(4) REFERENCES RoomDetails(room_id),  user_id varchar(4), booked_from date, booked_to date, no_of_adults number(2), no_of_children number(2), amount number(6,2));
